@@ -1,0 +1,562 @@
+REACT interview questions:
+
+1. What is React.js ? Explain the advantage and disadvantage.
+
+       React is a frontend and open source Javascript library which is useful in developing user interface specially in the Single Page Application(SPA). It is helpful in building complex and reusable user interface(UI) components of mobile and web application.
+
+       React uses Virtual DOM to render the view. Each time the data changes in the react app, a virtual DOM is created.
+       
+       ADVANTAGES: 
+
+       1. By use of Virtual DOM, react increases the performance of applications.
+       2. React renders both the client side and the server side.
+       3. React uses the reusable interface components for developing the single page application.
+
+       DISADVANTAGE:
+
+       1. React is just a view library, not a full frame work.
+       2. The code complexity increases in React with the inline templating and JSX.
+
+       FEATURES OF REACT:
+
+       1. It support one way data binding. The data in React flows only in one direction i.e. the data is transfered from parent component to child component.
+       2. React uses Virtual DOM and updates only the modified parts. This makes the DOM to run faster.
+
+2. What is React Router?
+       React Router is the standard routing library in react.
+       React Router is useful for developing the single page application, it is used to define multiple routes in the application. when a user enters a specific URL in the browser and if the URL path matches with any routes inside the router files, the user will be redirected to the particular routes.
+
+3. What is Stateless and Statefull components?
+        Stateless components are the components that donot contains state at all. It is like a normal function with no render method. In these components, there is no life cycle methods, and so we can not use the life cycle methods like componentDidMount, componentDidUpdate, componentWillUnmount etc.
+        Statefull component are the component that contains some states. it can contain state obejcts, event handling function, user action etc.
+
+4. Difference between Functional and Class Components.
+
+    1. Functional component are like Javascript function that accepts props as an argument and returns React Element.
+       Class components requires to extend from react component and create a render function and returns a reat element.
+    
+    2. There is no render() method in the functional component and in the class component, it must have the render() method.
+
+    3. React life cycle methods can not be used inside the functional components but in case of class component it can be used.
+
+    4. Hooks can be used inside the functional components but can not be used in case of the class components.
+
+5. Explain State and Props.
+
+     Props are the shorter way of saying 'properties'. Props are the argument passed into the react component.
+     we use 'props' when we want to pass the data from one component to other component(from parent to child component). Props are useful when we want the flow of data in our application to be dynamic.
+
+     React component has a built in state. This state is where we want to store the property values that belongs to the component. When the state changes, the component re-renders.
+
+6. Difference between state and props.
+
+     a. States are internal and controlled by the component itself and props are external and controlled by whatever renders the component.
+     b. States must have a initial value and props can be empty.
+     c. States are mutable and props are immutable.
+
+7. What are PropsDrilling?
+    PropsDrilling refers to the process of sending props from high level component to the low level component.
+
+    
+8. What is ReactDOM.render()?
+    ReactDOM.render() function takes two arguments, a HTML code and HTML element. The purpose of the function is to display the specified HTML code inside a specified HTML element.
+
+9. What is Virtual DOM? How does it work?
+    Virtual DOM is a programming interface where a virtual representation of user interface is kept in necessary and synced with real DOM by a library such as ReactDOM.
+
+    React uses two virtual DOM to render the user interface. One of them is used to store the current state of the object and the other is used to store the previous state of the object. Whenever virtual DOM gets updated, React compares the two virtual DOM and get to know about which virtual DOM object were updated. After knowing that, react renders only those objects inside the real DOM instead of rendering the complete real DOM.
+
+10. What are Fragments?
+    Fragments are the common patterns that allows us to wrap or group multiple elements without adding any extra node in the DOM.
+
+    With React Fragments, we can render multiple elements of a component without adding any extra DOM. It renders component faster and  takes less memory.
+
+11. What are pure component?
+    A React component is considered to be pure component if it renders the same output for the same state and props.
+
+12. What is JSX? What are the benefits of using JSX?
+    JSX is Javascript extension that allows us to write HTML code inside Javascript and place in the DOM without using functions.
+
+    Benefits: 1. JSX is helful as visual help when working with UI inside.
+              2. JSX allow React to show more useful error and warning messages.
+              3. Using JSX, we can create faster Application in React.
+              4. JSX is Faster compared to normal JS Code.
+
+13. What is life cycle method?
+    React Life Cycle Method allows us to specify what happens in our DOM at predetermined time of life cycle. React Life cycle metod corresspond to three actions. They are Mounting, updating and Unmounting.
+    1. Mounting refers to the adding of the node in the DOM.
+    2. Updating occurs when there is a state in props.
+    3. Unmounting is called when a component is being removed from the DOM.
+
+14. What is useState()?
+    useState is a built in react hook that allow us to have a state variable in functional component.
+    useState() returns a pair of values. a. the current state b. the function that update the current state.
+
+15. What is SPA(Single Page Application)?
+    SPA stands for Single Page Application. It is the way of programming websites. The idea is that the website loads all the HTML/JS the first time we visit.When we navigate through the web pages, the browser will only rerender the content without refreshing the website.
+
+16. What is HOC?
+    High Order Components ( HOC) is a function that takes a component and returns a new component. The purpose of the HOC is to enhance a component with extra functionality. A very common functionality is toggling.
+
+
+    Example:                  import React from 'react';
+
+                              const highOrderComponent = WrappedComponent => {
+                                  class HOC extends React.Component{
+                                      render(){
+                                          
+                                      }
+
+                                      
+                                  }
+                              }
+
+17. What is Lifting State Up?
+    Lifting state up means sharing state which is accomplished by moving the state up to the closest common anchestor of a component.
+    We use Lifting state up if the data in parent and child component is not in sync.  Example: If we have two component A and B. A is parent of B. Keeping the same data in both component A and B might cause inconsistency of data.
+
+18. Click to change the color of the text.
+
+                                     import React, {useState} from 'react';
+                                     function App(){
+                                         const [color, setColor] = useState("black");
+                                         return(
+                                             <div className="App">
+                                             <h1  style={{color:color}}> Hello </h1>
+                                             <button onClick={()=>{
+                                                 setColor(color = "red");
+                                             }}> Click </button>
+                                         );
+                                     }
+
+
+19.  Counter Function:
+
+                                   import React, {useState} from 'react';
+                                   function CounterApp(){
+                                       const [count, setCount] = useState(0);
+                                       return(
+                                           <>
+                                           <h2> The Count is : {count} </h2>
+                                           <button onClick = {()=>{
+                                               setCount(count + 1);
+                                           }}>INCREASE</button>
+                                           <button onClick = {()=>{
+                                               setCount(count = 0);
+                                           }}> RESET </button>
+                                           <button onClick = {()=>{
+                                               setCount(count -1);
+                                           }}>DECREASE</button>
+                                           </>
+                                       );
+                                   }
+
+21. Includation of propTypes:
+
+Create a file as information.js 
+                                  
+                                  import React from 'react';
+                                  import PropTypes from 'prop-types';
+
+                                  function information({name, age, email, isMarried}){
+                                      return(
+                                      <>
+                                      <h1> {name} </h1>
+                                      <h1> {age} </h1>
+                                      <h1> {email} </h1>
+                                      <h1> {isMarried ? "yes" ! "no"} </h1>
+                                      </>
+                                      );
+                                  }
+                                  information.propTypes = {
+                                      name : PropTypes.string,
+                                      age : PropTypes.number,
+                                      email : PropTypes.string,
+                                      isMarried : PropTypes.bool
+                                  };
+
+Now, in App.js,
+                                  import React from "react";
+                                  import information from "./information.js";
+
+                                  function App(){
+                                      return(
+                                          <>
+                                          <information name = "Chiranjeeb", age = {24}, email = "chiranjeebsaikia1@gmail.com",
+                                          isMarried = {false}/>
+                                          </>
+                                      );
+                                  }
+
+22. Concept of React Routing:
+ 
+ ==> IN App.js file,                import React from "react";
+                                    import Home from "./pages/Home.js";
+                                    import About from "./pages/About.js";
+                                    import Menu from "./pages/Menu.js";
+                                    import Contact from "./pages/Contact.js";
+                                    import NavBar from "./NavBar.js";
+                                    import Footer from "./pages/Footer.js";
+                                    import {Router, Routes, Route} from "react-render-dom";
+
+                                    function App(){
+                                        return(
+                                            <>
+                                            <Router>
+                                                <NavBar/>
+                                                <Routes>
+                                                    <Route path="/" element = {<Home/>}/>
+                                                    <Route path="/menu" element = {<Menu/>}/>
+                                                    <Route path ="/about" element = {<About/>}/>
+                                                    <Route path ="/contact" element = {<Contact/>}/>
+                                                </Routes>
+                                            <Footer/>
+                                            </Router>
+
+                                            </>
+                                        );
+                                    }
+
+    NOW, IN NavBar.js,
+                                    
+                                   import React from "react";
+                                   import {Link} from "react-render-dom";
+                                   const NavBar = () => {
+                                       return(
+                                           <nav>
+                                           <div>
+                                              <h3>NavBar</h3>
+                                              <ul>
+                                                  <li>
+                                                     <Link to="/"> Home </Link>
+                                                  </li>
+                                                  <li>
+                                                     <Link to="/menu"> Menu </Link>
+                                                  </li>
+                                                  <li>
+                                                     <Link to="/about"> About </Link>
+                                                  </li>
+                                                  <li>
+                                                     <Link to="/contact"> Contact </Link>
+                                                  </li>
+                                              </ul>
+                                           </div>
+                                           </nav>
+                                       );
+                                   }
+
+STYLING OF COMPONENTS: 
+
+Case-1: When there is only one property then, this is called inline CSS.
+
+                    import React from "react";
+                     function App(){
+                         return(
+                             <>
+                             <h1 style={{color:"red"}}> Hello Chiranjeeb </h1>
+                             </>
+                         );
+                     }
+
+Case-2: When there is more than one property. Then we will create an object of properties.
+                    import React from "react";
+
+                    function App(){
+                        const myStyle = {
+                            color: "white",
+                            backgroundColor:"red"
+                        }
+                        return(
+                            <>
+                               <h1 style = {myStyle} > Hello Chiranjeeb </h1>
+                            </>
+                        );
+                    } 
+
+Case-3: Using Plain CSS==>  Create a file inside the src file as App.css.
+
+                    import React from "react"
+                    import "./App.css"
+
+                    function App(){
+                        return(
+                            <div className="demo">
+                            <h1> Hello Chiranjeeb </h1>
+                            </div>
+                        );
+                    }
+
+Case-4: USING MODULE CSS. Create a file as demo.module.css and write,
+
+                    .demo{
+                        color: red;
+                        background-color: blue;
+                    }
+                    .demo1{
+                        color: black;
+                        background-color: red;
+                    }
+
+    Now in App.js file,
+                    
+                    import React from 'react'
+                    import style from './demo.module.css'
+
+                    function App(){
+                        return(
+                            <div className={style.demo}>
+                            <h1> Hello Chiranjeeb </h1>
+                            </div>
+                        );
+                    }
+
+                    OUTPUT: the color of the text is red and the background color is blue.
+
+                    import React from 'react'
+                    import style from './demo.module.css'
+
+                    function App(){
+                        return(
+                            <div className={style.demo1}>
+                            <h1>Hello Chiranjeeb</h1>
+                            </div>
+                        );
+                    }
+                    OUTPUT: The color of the text is black and the background color is red.
+
+
+What is Babel?  
+            Babel is a Javascript compiler that converts latest JavaScript like ES6, ES7 to old plain ES5 that most of the browser understands.
+
+What is Reconciliation?
+           When a components state or props changed, then rest will compare the rendered element with the previously rendered DOM and will update the actual DOM if it is needed. This is called Reconciliation.
+
+What is the use of 'key' in React list.
+           The key allow us to provide every list element with stable identity. The key should be unique.
+
+What is Error Boundaries?
+           Error Boundaries help us to catch the JavaScript error anywhere in the child's component. They are most used to log the error and show a fallback UI.
+
+What Are children props?
+           Children props are used to pass component to other component as properties. We can access it by using {props.children}.
+
+           why do we use props.children? We use props.children to pass components as data to the other components.
+
+What is the use of super keyword in React?
+
+           The super keyword allow us to access and call a function on an object's parent.
+
+what is the use of Arrow Function in React?
+
+           The arrow function allows us to predict the behaviour of bugs, when passed as a callback.Therefore , it prevents bugs caused by this all together.
+
+What is the main difference between createElement and cloneElement?
+
+           createElement is used by React to create react element.
+           cloneElement is used by React to clone a element and pass it new props.
+
+Difference Between Element and Component:
+
+          1. Elements does not have any methods.
+             Each component has its life cycle methods.
+
+          2. Element are immutable i.e. once created can not be changed.
+             Also state in a component is mutable.
+
+          3. Elements are light, stateless and hence it is faster.
+             Component is comparatively slower than elements.
+
+
+What are Hooks?
+           React Hooks allow us to use state and other React features without writing a class.example: useState(), useEffect() etc.
+
+What Is useEffect() hook?
+
+        useEffect() allow us to perform side effects in our component.
+        exmples are fetching data, directly updating the DOM , timer.
+        useEffect Hooks takes two arguments, 1. functional 2. dependency. The second arguments is optional.
+        useEffect(<functional>,<dependency>);
+
+        1. No dependency passed:     useEffect(()=>{},);  Run on every render.
+
+        Example: timer:
+        import react from 'react';
+        import {useState, useEffect} from 'react';
+
+        function Timer(){
+            const [count, setCount] = useState(0);
+
+            useEffect(()=>{
+                setTimeout(()=>{
+                    setCount((count)=> count + 1);
+                }, 1000);
+            });
+            return(
+                <>
+                   <h1>I have Rendered {count} times!</h1>
+                </>
+            )
+        }
+
+        2. An Empty Array is passed: useEffect(()=>{
+                                        //runs on initial render.
+                                     }, []);
+
+
+                                     import React from "react";
+                                     import {useState, useEffect} from "react";
+
+                                     function App(){
+                                         const [count,setCount] = useState(0);
+
+                                         useEffect(()=>{
+                                             setTimeout(()=>{
+                                                 setCount((count)=>count + 1);
+                                             },1000)
+                                         }, []);
+                                         return(
+                                             <>
+                                             <h1>I Have Rendered {count} times.</h1>
+                                             </>
+
+                                         );
+                                     }
+        
+        3. when Props or States are given:   useEffect(()=>{
+                                                 
+                                             }, [props, state]);
+
+                                        import React from 'react';
+                                        import {useState, useEffect} from 'react';
+
+                                        function App(){
+                                            const [count,setCount] = useState(0);
+                                            const [calculation, setCalculation] = useState(0);
+
+                                            useEffect(()=>{
+                                                setCalculation((count)=> count * 2);
+                                            }, [count])
+                                            return(
+                                                <>
+                                                <p> Count : {count} </p>
+                                                <button onClick={()=>{setCount(count + 1)}}>Click</button>
+                                                <p> Calculation : {calculation} </p>
+                                                </>
+
+                                            );
+                                        }
+Output: The output will be         Count : 0
+                                      button 
+                                    Calculation: 0
+
+            At the starting, the count is 0 and the calculation is 0. After clicking the button Count : 1 and the calculation is 2
+            again clicking the button , Count: 2 and the Calculation : 4. And so on.
+
+
+        useContext() Hook: 
+
+
+        CONDITIONAL RENDERING:                         
+
+       HIDE AND SHOW TOGGLE:
+       CASE-1: When two buttons are present "Hide" and "Show":
+
+                                 import React from 'react';
+                                 import {useState} from 'react';
+
+                                 function App(){
+                                     const [status,setStatus] = useState(true);
+                                     return(
+                                         <div className="App">
+                                         {
+                                             status ? <h1>Hello World!!</h1> : null
+                                         }
+                                         <button onClick={()=>setStatus(false)}>Hide</button>
+                                         <button onClick={()=>setStatus(true)}>Show</button>
+                                         </div>
+
+                                     );
+                                 }
+        CASE-2: When there will be a single button we use toggling.
+                               
+                                 import React from 'react';
+                                 import {useState} from 'react';
+
+                                 function App(){
+                                     const [status,setStatus] = useState(true);
+                                     return(
+                                         {
+                                             status ? <h1>Hello World!! </h1> : null
+                                         }
+                                         <button onClick={()=>setStatus(!status)}>Click</button>
+
+                                     );
+                                 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

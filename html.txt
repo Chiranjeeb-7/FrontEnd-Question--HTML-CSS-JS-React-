@@ -1,0 +1,206 @@
+HTML Front-End Questions:
+
+1.What is HTML?
+   HTML is acronym which stands for Hyper Text MarkUp Language. HTML is used to structure the web page and its content using different HTMl elements.
+
+2. What Are Semantic elements?
+    Semantic elements are the elements that clearly describe their meaning in human and machine readable way because they accurately describe the purpose of the elements and the type of content inside them.
+    example: <header>, <footer>, <article> etc.
+
+3. What is <!DocTYPE> ?
+    It is a declaration or an instruction to the web browser that what version of HTML is used.
+
+4. What Is HTML Tag, HTMl Elements and HTML attribute?
+
+    HTML tag is like a keyword where every single HTMl tag has unique meaning. HTMl tag is used to hold the HTML Elements. It starts with < and ends with > .
+
+    HTML Elements is whatever written in the HTMl tag and is used to hold the HTML content.
+
+    HTML Attribute is used to add more information corresponding to an HTML tag. HTML attributes are only found in starting tags.
+
+5. What Are Block Elements and Inline Elements?
+    Block Elements always starts on a new line and the browser automatically add some space before and after the elements. It always take full width. Ex. <div>, <p> etc.
+    Inline Elements does not starts on a new line and takes width as much as necessary. Ex. <span> tag.
+
+6. What are Empty Tags?
+    The tag that does not contain any ending tags are called EMpty tags. example: <br> , <hr> etc.
+
+7. What are Void Elements?
+    Void Elements are the elements whose content model does not allow it to have contents under any circumstances.
+    Ex.  br, hr, img , input etc.
+
+8. What are HTML Entities?
+    HTML entities is a piece of text that starts with the ampersand and ends with a semi-colon(;). HTML entities are used to display reserved characters. example:     &lt; ------> <
+                             &gt; ------> >
+
+9. What are Formatting tags ?
+    The tags that are used to make a text bold, italic and underlined. There are two categories of Formatting tags:
+     1) Physical Tags: These tags are used to provide the visual appearence to the text. example: <b>, <i>,  <u> etc.
+     2) Logical Tags: These tags are used to add some logical value to the text. example: <strong> tags tells the browser that text is important.
+
+10. Define Structure of HTML Layout?
+    HTML has many semantic elements that defines the structure of the web page.
+      <header> = The <header> element defines a header for a document or a section.
+      <nav> = Defines a set of navigation links.
+      <footer> = Defines a footer for a document or a section.
+      <section> = Defines a section for a document.
+
+11. What is <iframe> tag?
+    <iframe> tag specifies an inline frame. used to embed another document within the current HTML document. 
+
+CSS Front-End Questions:
+
+
+1. What are id and class attributes?
+      Id and class attributes are the element selector that are used to identify the element based upon the name assigned to these parameters.
+      But the difference is that id selector can apply to only one element and class selector can apply to multiple element.
+
+2. What are CSS Psuedo Elements and Psuedo class?
+      CSS Psuedo Elements are keywords added to the selectors that let us style specific part of the selected elements. Example: ::first-line is used to change the font of the first line of the selected element.
+
+      CSS Psuedo Class are the keywords that defines the special state of the element. Example: :hover can change the style of the element when a user mouse over it.
+
+3. What is difference between "display: none" and "visibility:hidden"?
+      The element with "display:none" is removed from the document but the space taken by the element is not blocked or covered.
+      The element with "visibility:hidden" is removed from the document and its space taken by the element is blocked or covered.
+
+4. An Inline CSS will over ride the external and internal CSS.
+
+5. What is CSS Box Sizing?
+     CSS box sizing is a property that allows us to include padding and border in an element total height and width.
+
+     box-sizing: border-box means we can include both padding and border.
+     box-sizing : content-box means we can not include padding and border in an elements total width and height.
+
+6. Explain the CSS Position property?
+     CSS position property is used to manipulate the location of an HTML element. There are 5 values of position property.
+
+    1. static: An element with position static is positioned according to the flow of the page and these elements are not affected by top, bottom, left and right properties.This is the default value of position property.
+
+    2. relative: The element with position relative is positioned relative to its normal position. Setting up the top, botom, left and right properties of relatively positioned element will cause it to be adjusted it away from its normal postion.
+
+    3. fixed: The element with position fixed is positioned relative to its viewport which means it will stay in the same page even if we scroll down the page.  
+
+    4. absolute: The element with position absolute is positioned relative to its nearest anchestor. If the absolute positioned element does not have the anchestor, it uses document body and moves along with the page.
+
+    5. sticky: The element with position sticky is positioned based upon the users scroll position.
+
+7. Explain CSS Margin, Padding ?
+     CSS Margin is used to create some space around the HTML element's content outside of any defined borders.
+                   margin: (top)px (right)px (bottom)px (right)px;
+                   margin: (top)px (right/left)px (bottom)px;
+                   margin: (top/bottom)px (right/left)px;
+
+    CSS Padding is used to create some space around the HTML content within any defined borders.
+                   padding: (top)px (right)px (bottom)px (right)px;
+                   padding: (top)px (right/left)px (bottom)px;
+                   padding: (top/bottom)px (right/left)px;
+
+8. What is CSS Box Model?
+    CSS Box model is a box that wraps around any HTML element which consist of margin, border, padding and the actual content.
+
+9. What is z-index in CSS?
+    IN CSS, the z-index specifies the stack over order of an HTML element which means that which element should be in front or behind. The value of z-index can positive or negative, if the value is positive then he element is in front and the value is negative then the element is in behind.
+    z-index only works on positioned element.
+
+10. Explain CSS display properties.
+    The display properties specifies the display behaviour of an HTML element.
+
+    1. display: inline; => Display an element as an inline element like <span> tag. Height and Width properties will have no effect on it.
+    2. display: block; => Display an element as an block element. It starts on a new line and takes up the whole width.
+    3. display: inline-block; => Display an element as an inline-block element. The element itself is formatted as inline element.
+
+11. Difference between CSS Flexbox and CSS Grid.
+            
+             1. CSS Flex box is one dimensional but CSS Grid is two dimensional.
+             2. CSS Flexbox layout items along either horizontally or vertically.But CSS Grid let us work in both axes i.e horizontally and vertically.
+             3.CSS Flx box is suitable for small scale layout and CSS Grid is suitable for large scale layout.
+
+12. How to make Zebra Striped Table?
+    
+    tr:nth-child(even){
+        background-color: grey;
+    }
+
+13. Explain CSS Animation property.
+    CSS animation is a shorthand property for 
+     animation-name, animation-duration, animation-timing-function, animation-delay, animation-iteration-count.
+      example: 
+                   
+                    div{
+                        height: 100px;
+                        width: 100px;
+                        animation: mymove 5s infinite;
+                    }
+
+                    @keyframes mymove{
+                        from{
+                            left: 0px;
+                        }
+                        to{
+                            left: 200px;
+                        }
+                    }
+
+
+                    Moved an element from 0px to 200px from left side. The animation will last for 5 seconds. The animation will takes place infinte times.
+
+    animation-name: Specifies the name of the keyframes that we want to bind with the selectors.
+    animation-duration: Specifies how many seconds or milliseconds the animation will take to complete.
+    animation-timing-function: Specifies the speed curve of the animation.
+    animation-delay: Specifies the delay before the animation will start.
+    animation-iteration-count: Specifies how many times the animation will take place.
+
+    Syntax: animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+
+
+    1.animation-delay: Specifies the delay before the animation will start. The value od animation-delay is i seconds(s) or milliseconds(ms).
+                       If the value is negative then  the animation will start as if it had already been playing for 2 seconds.
+
+    2. animation-direction: Specifies the direction of the animation The values are forward, backward or alternate or alternate-reverse.
+                            Example: 
+                                    div {
+                                         width: 100px;
+                                         height: 100px;
+                                         background: red;
+                                         position: relative;
+                                         animation: myfirst 5s 2;
+                                         animation-direction: forward;
+                                        }
+
+@keyframes myfirst {
+  0%   {background: red; left: 0px; top: 0px;}
+  25%  {background: yellow; left: 200px; top: 0px;}
+  50%  {background: blue; left: 200px; top: 200px;}
+  75%  {background: green; left: 0px; top: 200px;}
+  100% {background: red; left: 0px; top: 0px;}
+}
+
+
+3. animation-iteration-count: the value of animation-iteration-count are number, infinite, initial, inherit.
+4. animation-play-state: Specifies whether the animation is running or paused. The values are paused, running, inherit and initial. the default value is running.
+
+5. animation-timing-function: The values are 
+linear:	The animation has the same speed from start to end	
+ease: Default value. The animation has a slow start, then fast, before it ends slowly	
+ease-in: The animation has a slow start	
+ease-out: The animation has a slow end	
+ease-in-out: The animation has both a slow start and a slow end
+
+
+CSS Transform Property: 
+                       CSS transform property applies a 2D or 3D transformation to an element. This property allow us to rotate, scale, skew and move.
+                       div.a {
+                               transform: rotate(20deg);
+                             }
+
+                       div.b {
+                               transform: skewY(20deg);
+                              }
+
+                       div.c { 
+                               transform: scaleY(1.5);
+                             }
+
+
+
